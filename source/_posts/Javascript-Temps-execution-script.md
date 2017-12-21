@@ -8,17 +8,17 @@ Il peut être utile parfois de mesure le temps d'éxécution d'un bout de code j
 
 Pour cela, c'est assez simple, on ajoute 
 
-``` javascript
+```javascript
 console.time("MonMessageDeDébut");
 ```
 
 et cette ligne à la fin du code :
-``` javascript
+```javascript
 console.timeEnd("MonMessageDeFin");
 ```
 Voici un exemple pour illuster ou je compare le temps d'éxécution d'un **for** natif et d'un **angular foreach**
 
-``` javascript
+```javascript
 console.time("native-for");
 for (var i = 0; i < vm.listePays.length;i++) {
     if (vm.listePays[i].code==='FR')
