@@ -4,9 +4,9 @@ date: 2018-01-09 15:07:47
 tags:
 ---
 
-Pour un cas assez spécifique, j'ai eu besoin d'éxécuter du code javascript une fois que mon application angular soit chargé ( enfin sur tout que le template html soit affiché ), car je venais appliquer des éléments de styles sur les éléments graphiques affichés dans le template html.
+Pour un cas assez spécifique, j'ai eu besoin d'éxécuter du code javascript une fois que mon application angular soit chargée ( enfin surtout que le template html soit affiché ), car je viens appliquer des éléments de styles sur les éléments graphiques affichés dans le template html.
 
-Mais je me suis posé la question de savoir si la fonction `$(document).ready` éxécutait bien après que le html soit chargé.
+Mais je me suis posé la question de savoir si la fonction `$(document).ready` s'éxécutait bien après que le html soit chargé.
 
 Pour cela, rien ne vaut mieux qu'un exemple :
 
