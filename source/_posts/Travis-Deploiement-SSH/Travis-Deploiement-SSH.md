@@ -79,3 +79,5 @@ rm -rf deploy_rsa.pub
 # Fin
 
 Voila c'est tout, une fois votre job TRAVIS exécuté, votre fichier war sera directement installé sur votre serveur.
+
+[Projet GIT de domotique](https://github.com/samshay/DomotiquePleumeleuc)
