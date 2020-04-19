@@ -78,6 +78,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo:  https://github.com/samshay/samshay.github.io
+  repo:  https://github.com/samshay/samshay.github.io.git
   branch: master
   message: InitCommit
