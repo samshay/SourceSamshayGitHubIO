@@ -29,19 +29,20 @@ Ici, j'autorise toutes les adresses IP de mon sous-réseau 192.168.1.10/24
 J'ai créé le script dans le répertoire de partage du NAS :
 ``` sh
 #!/bin/bash
+LOGFILE=/mnt/back_nas/backup.log
 REP_NAS=/mnt/back_nas
-LOGFILE=$REP_NAS/backup.log
-DATE=$(date)
+DATE_ET_HEURE=$(date)
+DATE=$(date +"%Y-%m-%d")
 BoxToClone=$(uname -n)
-echo $DATE Debut de la sauvegarde de $BoxToClone >> $LOGFILE
+echo $DATE_ET_HEURE Debut de la sauvegarde de $BoxToClone >> $LOGFILE
 FileName=SD-Backup_$BoxToClone_$DATE.img
 File=$REP_NAS/$FileName
-sudo dd if=/dev/mmcblk0 bs=1M of=$File >> $LOGFILE && sync >> $LOGFILE
+sudo dd if=/dev/mmcblk0 bs=4M | sudo gzip -1 -| sudo dd of=$File
 
 #Suppression  image de plus de 7 jours
 find $REP_NAS/ -name "*.img" -type f -mtime +7 -exec rm -f {} 
 
-echo $DATE Fin sauvegarde >> $LOGFILE
+echo $DATE_ET_HEURE Fin sauvegarde >> $LOGFILE
 ```
 
 Ce script permet de créer la sauvegarde dans un fichier qui se nommera par exemple `SD-Backup_2020-04-19.img` et supprime les sauvegardes de plus de 7 jours.
